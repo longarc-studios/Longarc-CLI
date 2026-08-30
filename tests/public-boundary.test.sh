@@ -3,6 +3,7 @@
 set -eu
 
 test_root=$(/usr/bin/mktemp -d "${TMPDIR:-/tmp}/longarc-public-test.XXXXXX")
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 cleanup() {
   /bin/rm -rf "$test_root"
 }
@@ -99,5 +100,17 @@ if /usr/bin/grep -Eq 'bypass|disable.*Gatekeeper|xattr[[:space:]]+-d' \
   printf '%s\n' 'FAIL: installer contains a security bypass path' >&2
   exit 1
 fi
+
+promotion="$repo_root/promotion-status.json"
+runbook="$repo_root/docs/RELEASE_RUNBOOK.md"
+harness_commit=$(/usr/bin/plutil -extract verified.harnessCommit raw -o - "$promotion")
+archive_sha256=$(/usr/bin/plutil -extract verified.unsignedCandidateArchiveSha256 raw -o - "$promotion")
+[ "$(/usr/bin/plutil -extract status raw -o - "$promotion")" = 'blocked_before_external_prerelease' ]
+[ "$(/usr/bin/plutil -extract verified.interactionContract raw -o - "$promotion")" = 'longarc.surface.governed-session.v0.2' ]
+[ "$(/usr/bin/plutil -extract verified.localActionCountMode raw -o - "$promotion")" = 'metered_not_terminating' ]
+[ "$(/usr/bin/plutil -extract verified.npmAdvisoryScope raw -o - "$promotion")" = 'closed_core_build_graph' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAdvisories.total raw -o - "$promotion")" = '3' ]
+/usr/bin/grep -Fq "$harness_commit" "$runbook"
+/usr/bin/grep -Fq "$archive_sha256" "$runbook"
 
 printf '%s\n' 'PASS: public installer boundary tests'
