@@ -4,9 +4,11 @@ This runbook is for Long Arc maintainers. It does not authorize a release; every
 
 ## Alpha 1 source identity
 
-- Harness source commit: `e87d8d452548eded0d96bae05dd5db42f2d5eb46`
+- Harness source commit: `8a6729cc9e86ee6663ba66f4b8393814c1092669`
 - Memory Lane source commit: `6f2d413efcf6f5dc7da48a9588967f798662db14`
-- Reproducible unsigned-candidate archive SHA-256: `d974664dadd709af140769f7f8dcb61b87bb5379d36e5c7926b01f422effc55b`
+- Interaction contract: `longarc.surface.governed-session.v0.2`
+- Local-action accounting: `metered_not_terminating`
+- Reproducible unsigned-candidate archive SHA-256: `0b5765c4fa955176e984413afcd21a0e0704b9bc9d42fb3935ceea62bb3a221f`
 
 Both source commits are provider-verified squash commits on the private
 repositories' default `main` branches. Their trees exactly match the reviewed
@@ -14,6 +16,10 @@ candidate trees. The archive was independently assembled twice from those
 clean sources with identical bytes.
 
 The unsigned hash is local reproducibility evidence only. Developer ID signing changes the final archive bytes, so it is not the checksum to publish.
+
+The interaction and metering fields describe this compiled candidate only. They
+do not authorize a release or remove the wall-clock, event, connected-action,
+byte, sandbox, steering, or operator-cancellation safeguards.
 
 ## 1. Qualify clean private sources
 
@@ -35,13 +41,22 @@ In the Harness:
 
 ```sh
 npm ci --ignore-scripts
+npm ci --prefix workers/north-turn-v1 --ignore-scripts
+npm ci --prefix workers/north-research-broker-v1 --ignore-scripts
 npm run typecheck
+npm run build
 npm test
 npm run verify:boundaries
 npm run verify:hygiene
 node scripts/verify-cli-v0-boundary.mjs
 node scripts/verify-codex-app-server-0.147.0-compatibility.mjs --live
 ```
+
+The `npmAdvisories` promotion field covers the closed-core build graph, which
+currently reports zero advisories. A non-release development graph currently
+reports three advisories (two moderate and one high); those dependencies are
+not included in this archive. Remediating that private dependency graph is a
+separate source change, not part of this metadata-only public update.
 
 Run the Node-to-Rust integration verifier with an isolated test vault, exact runtime digest, and explicit export path. It must finish with reset `true` and leave no test Keychain item.
 
