@@ -19,12 +19,12 @@
     "unsignedCandidateArchiveSha256": "e659abb6c2c3e23ecf7242201456929840d17d1f35f6bd4195ac4f3561c01369",
     "privateSourceInArchive": false,
     "githubOrganizationAuthentication": "longarcstudios_repo_write_verified",
+    "githubProviderDurability": "public_main_private_review_branches_and_workflow_verified",
     "founderLicenseDecision": "approved_2026-08-30",
     "publicBootstrapLicense": "MIT",
     "compiledCoreLicense": "long_arc_external_prerelease_v0.1"
   },
   "blocked": {
-    "githubProviderDurability": "pending_push_and_readback",
     "developerIdApplicationIdentity": "unavailable",
     "notarizationProfile": "unavailable",
     "signedNotarizedArtifact": "not_built",
@@ -33,5 +33,5 @@
     "secondSessionProviderRecall": "explicit_memory_projection_egress_consent_required",
     "jeffFirstRegularUserQualification": "not_started"
   },
-  "claimCeiling": "source_committed_unsigned_local_candidate_only"
+  "claimCeiling": "provider_durable_unsigned_source_candidate_only"
 }
