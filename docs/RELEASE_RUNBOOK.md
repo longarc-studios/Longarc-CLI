@@ -4,11 +4,11 @@ This runbook is for Long Arc maintainers. It does not authorize a release; every
 
 ## Alpha 1 source identity
 
-- Harness source commit: `8a6729cc9e86ee6663ba66f4b8393814c1092669`
+- Harness source commit: `c6239445cf1d97afb86f27aa58a28518930c7bed`
 - Memory Lane source commit: `6f2d413efcf6f5dc7da48a9588967f798662db14`
 - Interaction contract: `longarc.surface.governed-session.v0.2`
 - Local-action accounting: `metered_not_terminating`
-- Reproducible unsigned-candidate archive SHA-256: `0b5765c4fa955176e984413afcd21a0e0704b9bc9d42fb3935ceea62bb3a221f`
+- Reproducible unsigned-candidate archive SHA-256: `3404be7341c00d32a8581c460466e5c9010418f07e00ca81d999d891f83a0b52`
 
 Both source commits are provider-verified squash commits on the private
 repositories' default `main` branches. Their trees exactly match the reviewed
@@ -53,10 +53,14 @@ node scripts/verify-codex-app-server-0.147.0-compatibility.mjs --live
 ```
 
 The `npmAdvisories` promotion field covers the closed-core build graph, which
-currently reports zero advisories. A non-release development graph currently
-reports three advisories (two moderate and one high); those dependencies are
-not included in this archive. Remediating that private dependency graph is a
-separate source change, not part of this metadata-only public update.
+reports zero advisories. The predecessor North worker development graph had
+three affected package nodes spanning five underlying advisories, with `high`
+as the highest severity. That private dependency graph was remediated in
+Harness commit `27ddd79d831410ffc56f75045a357222a2ae597c` and is incorporated by
+the source commit above. Current audits report zero affected package nodes in
+the worker's full and production-only graphs, the repository root, and the
+research broker. The development tooling remains outside this archive; this
+metadata records its remediation and does not deploy the worker.
 
 Run the Node-to-Rust integration verifier with an isolated test vault, exact runtime digest, and explicit export path. It must finish with reset `true` and leave no test Keychain item.
 

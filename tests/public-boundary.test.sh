@@ -109,7 +109,12 @@ archive_sha256=$(/usr/bin/plutil -extract verified.unsignedCandidateArchiveSha25
 [ "$(/usr/bin/plutil -extract verified.interactionContract raw -o - "$promotion")" = 'longarc.surface.governed-session.v0.2' ]
 [ "$(/usr/bin/plutil -extract verified.localActionCountMode raw -o - "$promotion")" = 'metered_not_terminating' ]
 [ "$(/usr/bin/plutil -extract verified.npmAdvisoryScope raw -o - "$promotion")" = 'closed_core_build_graph' ]
-[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAdvisories.total raw -o - "$promotion")" = '3' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAudit.status raw -o - "$promotion")" = 'remediated' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAudit.priorAffectedPackageNodes raw -o - "$promotion")" = '3' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAudit.priorUnderlyingAdvisories raw -o - "$promotion")" = '5' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAudit.currentAffectedPackageNodes raw -o - "$promotion")" = '0' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAudit.currentUnderlyingAdvisories raw -o - "$promotion")" = '0' ]
+[ "$(/usr/bin/plutil -extract verified.nonReleaseDevelopmentNpmAudit.includedInArchive raw -o - "$promotion")" = 'false' ]
 /usr/bin/grep -Fq "$harness_commit" "$runbook"
 /usr/bin/grep -Fq "$archive_sha256" "$runbook"
 
