@@ -30,6 +30,7 @@ safe_source="$test_root/safe/$package"
 /usr/bin/touch "$safe_source/longarc-core"
 /usr/bin/touch "$safe_source/longarc-memory-runtime"
 /usr/bin/touch "$safe_source/longarc-release-manifest.json"
+/usr/bin/touch "$safe_source/PROPRIETARY_NOTICE.txt"
 safe_archive="$test_root/safe.tar.gz"
 COPYFILE_DISABLE=1 /usr/bin/tar -czf "$safe_archive" -C "$test_root/safe" "$package"
 validate_archive_listing \
@@ -43,6 +44,7 @@ unsafe_source="$test_root/unsafe/$package"
 /bin/ln -s /tmp "$unsafe_source/longarc-core"
 /usr/bin/touch "$unsafe_source/longarc-memory-runtime"
 /usr/bin/touch "$unsafe_source/longarc-release-manifest.json"
+/usr/bin/touch "$unsafe_source/PROPRIETARY_NOTICE.txt"
 unsafe_archive="$test_root/unsafe.tar.gz"
 COPYFILE_DISABLE=1 /usr/bin/tar -czf "$unsafe_archive" -C "$test_root/unsafe" "$package"
 if (validate_archive_listing \
@@ -88,6 +90,10 @@ fi
 
 /usr/bin/grep -Fq "repository='longarc-studios/Longarc-CLI'" \
   "$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)/install.sh"
+/usr/bin/grep -Fq 'MIT License' \
+  "$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)/LICENSE"
+/usr/bin/grep -Fq 'proprietary ordinary-use license' \
+  "$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)/README.md"
 if /usr/bin/grep -Eq 'bypass|disable.*Gatekeeper|xattr[[:space:]]+-d' \
   "$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)/install.sh"; then
   printf '%s\n' 'FAIL: installer contains a security bypass path' >&2

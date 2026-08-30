@@ -8,7 +8,7 @@ This public repository is the installation and verification surface. The compile
 
 The first external prerelease is not published yet. The installer intentionally fails closed until a Developer ID signed and Apple-notarized release exists on this repository. Do not work around Gatekeeper or install an unsigned candidate.
 
-No public repository software license is granted yet. Public visibility is an inspection boundary, not an open-source declaration; the license posture and proprietary end-user terms remain held at the documented legal review gate.
+The bootstrap code and documentation in this repository are MIT-licensed. That license does not apply to the compiled Harness or Memory Lane runtime. The closed release carries its own proprietary ordinary-use license; see [docs/LICENSE_DECISION.md](docs/LICENSE_DECISION.md).
 
 The first supported target is Apple silicon macOS. A user also needs the authenticated Codex CLI version named by the release notes. The first build train is pinned to `codex-cli 0.147.0`.
 
@@ -76,6 +76,7 @@ No uninstall or reset operation contacts Long Arc Studios.
 - The compiled CLI verifies every packaged file against its release manifest on launch.
 - The manifest binds the artifact to clean, immutable Harness and Memory Lane commits.
 - The release manifest states the privacy and IP boundaries in machine-readable form.
+- The archive contains the proprietary license that authorizes ordinary use of the closed binaries.
 
 These checks establish release integrity. They do not make the closed implementation open source or make reverse engineering impossible.
 

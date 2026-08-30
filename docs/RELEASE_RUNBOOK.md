@@ -4,9 +4,9 @@ This runbook is for Long Arc maintainers. It does not authorize a release; every
 
 ## Alpha 1 source identity
 
-- Harness source commit: `910d5119d72df022062a1b57d21584fe44c62324`
+- Harness source commit: `81a175a19a3d9f17cc7acfc91d9099082a6a5430`
 - Memory Lane source commit: `7af1c29bb2d4622ce4eef29ffa632792842b4fdb`
-- Reproducible unsigned-candidate archive SHA-256: `4d2aa8b974caa346211eaedb1faf902533d1ffe21e6525153e69441747f10cfd`
+- Reproducible unsigned-candidate archive SHA-256: `e659abb6c2c3e23ecf7242201456929840d17d1f35f6bd4195ac4f3561c01369`
 
 The unsigned hash is local reproducibility evidence only. Developer ID signing changes the final archive bytes, so it is not the checksum to publish.
 
@@ -81,7 +81,7 @@ Provider readback must confirm the exact commit, visibility, default branch, wor
 
 ## 5. Create the prerelease
 
-Only after legal approval and signed artifact verification:
+Only after the approved license notices are present and signed artifact verification passes:
 
 ```sh
 gh release create v0.1.0-alpha.1 \

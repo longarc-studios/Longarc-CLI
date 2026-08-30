@@ -5,7 +5,7 @@
   "status": "blocked_before_external_prerelease",
   "verified": {
     "memoryLaneCommit": "7af1c29bb2d4622ce4eef29ffa632792842b4fdb",
-    "harnessCommit": "910d5119d72df022062a1b57d21584fe44c62324",
+    "harnessCommit": "81a175a19a3d9f17cc7acfc91d9099082a6a5430",
     "threeCheckpointContinuity": true,
     "explicitProposalConsent": true,
     "localRestartRecall": true,
@@ -16,14 +16,17 @@
     "rustSecVulnerabilities": 0,
     "npmAdvisories": 0,
     "sourceBoundReproducibleCandidate": true,
-    "unsignedCandidateArchiveSha256": "4d2aa8b974caa346211eaedb1faf902533d1ffe21e6525153e69441747f10cfd",
-    "privateSourceInArchive": false
+    "unsignedCandidateArchiveSha256": "e659abb6c2c3e23ecf7242201456929840d17d1f35f6bd4195ac4f3561c01369",
+    "privateSourceInArchive": false,
+    "githubOrganizationAuthentication": "longarcstudios_repo_write_verified",
+    "founderLicenseDecision": "approved_2026-08-30",
+    "publicBootstrapLicense": "MIT",
+    "compiledCoreLicense": "long_arc_external_prerelease_v0.1"
   },
   "blocked": {
-    "githubOrganizationAuthentication": "device_authorization_pending",
+    "githubProviderDurability": "pending_push_and_readback",
     "developerIdApplicationIdentity": "unavailable",
     "notarizationProfile": "unavailable",
-    "humanLegalReview": "required",
     "signedNotarizedArtifact": "not_built",
     "publicRelease": "not_created",
     "cleanMachineInstall": "not_run",

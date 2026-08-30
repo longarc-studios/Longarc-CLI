@@ -10,7 +10,7 @@ Jeff becomes Long Arc's first external regular user only after every release gat
 - [ ] The release archive is reproducible or its remaining nondeterminism is identified and bounded.
 - [ ] Both binaries are Developer ID signed and Apple notarization is accepted.
 - [ ] The public repository contains no private source, vault data, keys, credentials, or user identifiers.
-- [ ] Human legal review approves the proprietary runtime terms and the public repository license posture.
+- [ ] The founder-approved MIT/public-bootstrap and proprietary/closed-core license notices are present and verified.
 - [ ] A public GitHub prerelease and checksum exist on the exact tag.
 - [ ] A clean Apple silicon Mac installs without organization access, private repository access, `sudo`, or a Gatekeeper bypass.
 - [ ] Uninstall preserves memory by default; explicit reset removes the vault and key without contacting Long Arc.

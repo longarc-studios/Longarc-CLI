@@ -110,6 +110,8 @@ validate_archive_listing() {
     || die 'release archive is missing the Memory Lane runtime'
   /usr/bin/grep -Fxq "$package_name/longarc-release-manifest.json" "$listing" \
     || die 'release archive is missing its manifest'
+  /usr/bin/grep -Fxq "$package_name/PROPRIETARY_NOTICE.txt" "$listing" \
+    || die 'release archive is missing its proprietary-use license'
   [ "$(/usr/bin/grep -Fxc "$package_name/" "$listing")" = '1' ] \
     || die 'release archive must contain exactly one package root entry'
 
@@ -135,8 +137,9 @@ verify_release_directory() {
   manifest="$release_root/longarc-release-manifest.json"
   core="$release_root/longarc-core"
   runtime="$release_root/longarc-memory-runtime"
+  proprietary_notice="$release_root/PROPRIETARY_NOTICE.txt"
 
-  for required_file in "$manifest" "$core" "$runtime"; do
+  for required_file in "$manifest" "$core" "$runtime" "$proprietary_notice"; do
     [ -f "$required_file" ] && [ ! -L "$required_file" ] \
       || die 'release contains a missing, linked, or non-regular required file'
   done
@@ -153,6 +156,8 @@ verify_release_directory() {
     || die 'release is not Apple-notarized'
   [ "$(manifest_value "$manifest" claimCeiling)" = 'signed_notarized_external_prerelease' ] \
     || die 'release claim ceiling is not external prerelease'
+  /usr/bin/grep -Fxq 'LONG ARC EXTERNAL PRERELEASE LICENSE v0.1' "$proprietary_notice" \
+    || die 'release proprietary-use license is invalid'
 
   [ "$(manifest_value "$manifest" boundaries.repositorySourceFilesIncluded)" = 'false' ] \
     || die 'release source boundary is invalid'
