@@ -5,7 +5,7 @@
   "status": "blocked_before_external_prerelease",
   "verified": {
     "memoryLaneCommit": "6f2d413efcf6f5dc7da48a9588967f798662db14",
-    "harnessCommit": "8a6729cc9e86ee6663ba66f4b8393814c1092669",
+    "harnessCommit": "c6239445cf1d97afb86f27aa58a28518930c7bed",
     "interactionContract": "longarc.surface.governed-session.v0.2",
     "localActionCountMode": "metered_not_terminating",
     "threeCheckpointContinuity": true,
@@ -18,14 +18,17 @@
     "rustSecVulnerabilities": 0,
     "npmAdvisories": 0,
     "npmAdvisoryScope": "closed_core_build_graph",
-    "nonReleaseDevelopmentNpmAdvisories": {
-      "total": 3,
-      "moderate": 2,
-      "high": 1,
+    "nonReleaseDevelopmentNpmAudit": {
+      "status": "remediated",
+      "priorAffectedPackageNodes": 3,
+      "priorUnderlyingAdvisories": 5,
+      "priorHighestSeverity": "high",
+      "currentAffectedPackageNodes": 0,
+      "currentUnderlyingAdvisories": 0,
       "includedInArchive": false
     },
     "sourceBoundReproducibleCandidate": true,
-    "unsignedCandidateArchiveSha256": "0b5765c4fa955176e984413afcd21a0e0704b9bc9d42fb3935ceea62bb3a221f",
+    "unsignedCandidateArchiveSha256": "3404be7341c00d32a8581c460466e5c9010418f07e00ca81d999d891f83a0b52",
     "privateSourceInArchive": false,
     "githubOrganizationAuthentication": "longarcstudios_repo_write_verified",
     "githubProviderDurability": "public_main_and_verified_private_main_promotions_verified",
