@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "longarc.external-prerelease-promotion-status.v1",
+  "version": "v0.1.0-alpha.1",
+  "status": "blocked_before_external_prerelease",
+  "verified": {
+    "memoryLaneCommit": "7af1c29bb2d4622ce4eef29ffa632792842b4fdb",
+    "harnessCommit": "910d5119d72df022062a1b57d21584fe44c62324",
+    "threeCheckpointContinuity": true,
+    "explicitProposalConsent": true,
+    "localRestartRecall": true,
+    "triggerWordRecognition": "adopted_11_proposal_only_2",
+    "reasoningPatternCapture": "candidate_requires_replay",
+    "fullHarnessSuite": true,
+    "rustTestsAndClippy": true,
+    "rustSecVulnerabilities": 0,
+    "npmAdvisories": 0,
+    "sourceBoundReproducibleCandidate": true,
+    "unsignedCandidateArchiveSha256": "4d2aa8b974caa346211eaedb1faf902533d1ffe21e6525153e69441747f10cfd",
+    "privateSourceInArchive": false
+  },
+  "blocked": {
+    "githubOrganizationAuthentication": "device_authorization_pending",
+    "developerIdApplicationIdentity": "unavailable",
+    "notarizationProfile": "unavailable",
+    "humanLegalReview": "required",
+    "signedNotarizedArtifact": "not_built",
+    "publicRelease": "not_created",
+    "cleanMachineInstall": "not_run",
+    "secondSessionProviderRecall": "explicit_memory_projection_egress_consent_required",
+    "jeffFirstRegularUserQualification": "not_started"
+  },
+  "claimCeiling": "source_committed_unsigned_local_candidate_only"
+}

@@ -79,4 +79,4 @@ No uninstall or reset operation contacts Long Arc Studios.
 
 These checks establish release integrity. They do not make the closed implementation open source or make reverse engineering impossible.
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [SECURITY.md](SECURITY.md), and [docs/FIRST_USER_ACCEPTANCE.md](docs/FIRST_USER_ACCEPTANCE.md).
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [SECURITY.md](SECURITY.md), [docs/RELEASE_RUNBOOK.md](docs/RELEASE_RUNBOOK.md), and [docs/FIRST_USER_ACCEPTANCE.md](docs/FIRST_USER_ACCEPTANCE.md). The current machine-readable gate state is [promotion-status.json](promotion-status.json).
