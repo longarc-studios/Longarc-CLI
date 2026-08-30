@@ -4,8 +4,8 @@
   "version": "v0.1.0-alpha.1",
   "status": "blocked_before_external_prerelease",
   "verified": {
-    "memoryLaneCommit": "7af1c29bb2d4622ce4eef29ffa632792842b4fdb",
-    "harnessCommit": "81a175a19a3d9f17cc7acfc91d9099082a6a5430",
+    "memoryLaneCommit": "6f2d413efcf6f5dc7da48a9588967f798662db14",
+    "harnessCommit": "e87d8d452548eded0d96bae05dd5db42f2d5eb46",
     "threeCheckpointContinuity": true,
     "explicitProposalConsent": true,
     "localRestartRecall": true,
@@ -16,10 +16,10 @@
     "rustSecVulnerabilities": 0,
     "npmAdvisories": 0,
     "sourceBoundReproducibleCandidate": true,
-    "unsignedCandidateArchiveSha256": "e659abb6c2c3e23ecf7242201456929840d17d1f35f6bd4195ac4f3561c01369",
+    "unsignedCandidateArchiveSha256": "d974664dadd709af140769f7f8dcb61b87bb5379d36e5c7926b01f422effc55b",
     "privateSourceInArchive": false,
     "githubOrganizationAuthentication": "longarcstudios_repo_write_verified",
-    "githubProviderDurability": "public_main_private_review_branches_and_workflow_verified",
+    "githubProviderDurability": "public_main_and_verified_private_main_promotions_verified",
     "founderLicenseDecision": "approved_2026-08-30",
     "publicBootstrapLicense": "MIT",
     "compiledCoreLicense": "long_arc_external_prerelease_v0.1"
@@ -33,5 +33,5 @@
     "secondSessionProviderRecall": "explicit_memory_projection_egress_consent_required",
     "jeffFirstRegularUserQualification": "not_started"
   },
-  "claimCeiling": "provider_durable_unsigned_source_candidate_only"
+  "claimCeiling": "provider_durable_private_main_unsigned_archive_candidate_only"
 }

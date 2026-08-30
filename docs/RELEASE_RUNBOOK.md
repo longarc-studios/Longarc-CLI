@@ -4,9 +4,14 @@ This runbook is for Long Arc maintainers. It does not authorize a release; every
 
 ## Alpha 1 source identity
 
-- Harness source commit: `81a175a19a3d9f17cc7acfc91d9099082a6a5430`
-- Memory Lane source commit: `7af1c29bb2d4622ce4eef29ffa632792842b4fdb`
-- Reproducible unsigned-candidate archive SHA-256: `e659abb6c2c3e23ecf7242201456929840d17d1f35f6bd4195ac4f3561c01369`
+- Harness source commit: `e87d8d452548eded0d96bae05dd5db42f2d5eb46`
+- Memory Lane source commit: `6f2d413efcf6f5dc7da48a9588967f798662db14`
+- Reproducible unsigned-candidate archive SHA-256: `d974664dadd709af140769f7f8dcb61b87bb5379d36e5c7926b01f422effc55b`
+
+Both source commits are provider-verified squash commits on the private
+repositories' default `main` branches. Their trees exactly match the reviewed
+candidate trees. The archive was independently assembled twice from those
+clean sources with identical bytes.
 
 The unsigned hash is local reproducibility evidence only. Developer ID signing changes the final archive bytes, so it is not the checksum to publish.
 
